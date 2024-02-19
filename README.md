@@ -10,9 +10,18 @@
 ## 0. Overview
 ### Environment
 - _Write Development environment_
+- AMD Ryzen Threadripper 3960X 24-Core Processor
+- NVIDIA GeForce RTX 3090
+- CUDA Version 12.2
 
 ### Requirements
 - _Write Requirements_
+- albumentations==1.3.1
+- numpy==1.26.0
+- timm==0.9.12
+- torch==2.1.0
+- torchvision=0.16.0
+- scikit-learn=1.3.2
 
 ## 1. Competiton Info
 
