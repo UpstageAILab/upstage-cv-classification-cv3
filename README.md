@@ -31,6 +31,9 @@
 ### Timeline
 
 - Feburary 05, 2024 - Start Date
+- Feburary 07, 2024 - Mentoring1
+- Feburary 16, 2024 - Mentoring2
+- Feburary 19, 2024 - Mentoring3
 - Feburary 19, 2024 - Final submission deadline
 
 ### Evaluation
@@ -43,17 +46,14 @@
 e.g.
 ```
 ├── code
-│   ├── jupyter_notebooks
-│   │   └── model_train.ipynb
+│   ├── model_train.ipynb
 │   └── train.py
 ├── docs
-│   ├── pdf
-│   │   └── (Template) [패스트캠퍼스] Upstage AI Lab 1기_그룹 스터디 .pptx
+│   ├── (Template) [패스트캠퍼스] Upstage AI Lab 1기_그룹 스터디 .pptx
 │   └── paper
-└── input
-    └── data
-        ├── eval
-        └── train
+└── data
+    ├── test
+    └── train
 ```
 
 ## 3. Data descrption
@@ -105,6 +105,9 @@ e.g.
 - 다른 augmentation을 적용하거나 클래스 별 학습 데이터 불균형으로 oversampling하여 실험해 보기도 함
 - 각 모델이 pre-trained된 image size에 따라 size 변경
 
+**이현진**
+- EfficientNet
+
 ### Modeling Process
 
 - _Write model train and test process with capture_
@@ -136,16 +139,46 @@ e.g.
         param.requires_grad = False
   ```
 
+**이현진**
+- scheduler 사용 (CosineAnnealingWarmRestarts)<br>
+```
+scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer,T_0=10, 
+                                                                 T_mult=1, eta_min= 1e-6)
+```
+- Focal loss 사용 (불러옴)<br>단, focal loss의 alpha는 데이터가 가장 많은 class를 기준으로, 그 class보다 데이터가 작으면 그 비율만큼 alpha를 상승시켜 loss 계산<br>
+추가적으로 class 3과 class 7에서 잘 예측을 하지 못해 해당 class의 alpha를 증강 (1.3배)
+```
+a = train.target.value_counts().sort_index(ascending = True).reset_index().drop(columns = ['target'])
+a = a['count'].apply(lambda x: round(max(a['count'])/x, 5))
+a = a.to_list()
+a[3] = a[3] * 1.3
+a[7] = a[7] * 1.3
+
+loss_fn = torch.hub.load(
+	'adeelh/pytorch-multi-class-focal-loss',
+	model='focal_loss',
+	alpha=a,
+	gamma=2,
+	reduction='mean',
+	device='cuda:0',
+	dtype=torch.float32,
+	force_reload=False
+)
+```
+
 ## 5. Result
 
 ### Leader Board
 
-- _Insert Leader Board Capture_
-- _Write rank and score_
+![image](https://github.com/UpstageAILab/upstage-cv-classification-cv3/assets/119946138/40cf30f0-c0b9-4478-bd9b-ce71476322a0)
+
+Public : 7th
+
+Private : 7th
 
 ### Presentation
 
-- _Insert your presentaion file(pdf) link_
+
 
 ## etc
 
