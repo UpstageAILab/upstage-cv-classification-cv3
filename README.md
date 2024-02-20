@@ -9,13 +9,11 @@
 
 ## 0. Overview
 ### Environment
-- _Write Development environment_
 - AMD Ryzen Threadripper 3960X 24-Core Processor
 - NVIDIA GeForce RTX 3090
 - CUDA Version 12.2
 
 ### Requirements
-- _Write Requirements_
 - albumentations==1.3.1
 - numpy==1.26.0
 - timm==0.9.12
@@ -42,9 +40,6 @@
 ## 2. Components
 
 ### Directory
-
-- _Insert your directory structure_
-
 e.g.
 ```
 ├── code
