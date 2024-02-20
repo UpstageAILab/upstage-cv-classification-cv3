@@ -46,11 +46,11 @@
 e.g.
 ```
 ├── code
-│   ├── model_train.ipynb
-│   └── train.py
+│   ├── baseline_code_05_linux.ipynb
+│   ├── baseline_code_05_linux_model2.ipynb
+│   └── baseline_code_05_linux_model3.ipynb
 ├── docs
-│   ├── [패스트캠퍼스] Upstage AI Lab 1기_그룹 스터디_3조.pptx
-│   └── paper
+│   └── [패스트캠퍼스] Upstage AI Lab 1기_그룹 스터디_3조.pptx.pdf
 └── data
     ├── test
     ├── train
