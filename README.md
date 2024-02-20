@@ -49,11 +49,14 @@ e.g.
 │   ├── model_train.ipynb
 │   └── train.py
 ├── docs
-│   ├── (Template) [패스트캠퍼스] Upstage AI Lab 1기_그룹 스터디 .pptx
+│   ├── [패스트캠퍼스] Upstage AI Lab 1기_그룹 스터디_3조.pptx
 │   └── paper
 └── data
     ├── test
-    └── train
+    ├── train
+    ├── train.csv
+    ├── meta.csv
+    └── sample_submission.csv
 ```
 
 ## 3. Data descrption
