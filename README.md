@@ -96,19 +96,19 @@ e.g.
     ```
 - 애매한 labeling을 가진 데이터의 csv 파일 수정
 - 16 Offline Augmentations: 다양하게 변형된 features를 학습하여 robust한 모델을 만들기 위해 offline 방법 적용.  
-+ HorizontalFlip  
-+ VerticalFlip  
-+ ShiftScaleRotate  
-+ Grayscale  
-+ ColorJitter  
-+ Blur  
-+ MedianBlur  
-+ Spatter  
-+ Defocus  
-+ ZoomBlur  
-+ OpticalDistortion 2장  
-+ Perspective 2장  
-+ Rotate 2장  
+	+ HorizontalFlip  
+	+ VerticalFlip  
+	+ ShiftScaleRotate  
+	+ Grayscale  
+	+ ColorJitter  
+	+ Blur  
+	+ MedianBlur  
+	+ Spatter  
+	+ Defocus  
+	+ ZoomBlur  
+	+ OpticalDistortion 2장  
+	+ Perspective 2장  
+	+ Rotate 2장  
   
 
 ## 4. Modeling
