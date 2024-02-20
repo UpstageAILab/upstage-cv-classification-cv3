@@ -1,6 +1,6 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/3DbKuh4a)
-# Title (Please modify the title)
-## Team
+# [CV] Document Type Classification
+## 3조
 
 | ![이현진](https://avatars.githubusercontent.com/u/156163982?v=4) | ![권혁찬](https://avatars.githubusercontent.com/u/156163982?v=4) | ![김소현](https://avatars.githubusercontent.com/u/156163982?v=4) | ![김태한](https://avatars.githubusercontent.com/u/156163982?v=4) | ![문정의](https://avatars.githubusercontent.com/u/156163982?v=4) |
 | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: |
@@ -75,6 +75,7 @@ e.g.
 
 - labeling이 애매한 데이터들 존재
 - 대부분의 모델이 3, 7, 13번 class를 자주 혼동하는 경향을 보임
+- Scikit-Learn의 Confusion Matrix의 시각화로 잘 분류되는 클래스와 자주 혼동되는 클래스 확인  
 
 ### Data Processing
 
@@ -94,6 +95,21 @@ e.g.
     ])
     ```
 - 애매한 labeling을 가진 데이터의 csv 파일 수정
+- 16 Offline Augmentations: 다양하게 변형된 features를 학습하여 robust한 모델을 만들기 위해 offline 방법 적용.  
++ HorizontalFlip  
++ VerticalFlip  
++ ShiftScaleRotate  
++ Grayscale  
++ ColorJitter  
++ Blur  
++ MedianBlur  
++ Spatter  
++ Defocus  
++ ZoomBlur  
++ OpticalDistortion 2장  
++ Perspective 2장  
++ Rotate 2장  
+  
 
 ## 4. Modeling
 
@@ -110,6 +126,10 @@ e.g.
 
 **이현진**
 - EfficientNet
+
+**김태한**
+- EfficientNet V2 M: Classifier만 학습하는 Transfer Learning과 전체를 학습하는 Fine-Tuning 모두 적용
+- Two Stage Model: 첫 번째 EfficientNet V2 M으로 자동차계기판, 자동차번호판, 문서를 분류. 두 번째 EfficientNet V2 M으로 나머지 15가지의 문서를 분류.
 
 ### Modeling Process
 
