@@ -195,9 +195,9 @@ loss_fn = torch.hub.load(
 
 ![image](https://github.com/UpstageAILab/upstage-cv-classification-cv3/assets/119946138/40cf30f0-c0b9-4478-bd9b-ce71476322a0)
 
-Public : 7th
+Public : 7th, 0.9303
 
-Private : 7th
+Private : 7th, 0.9183
 
 ### Presentation
 
